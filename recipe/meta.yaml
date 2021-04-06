@@ -1,5 +1,5 @@
 {% set name = "hexalattice" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4b30f5bb54c31436fbd6c5e4d378bb11decfc5b9c85370e14e74b71a636bc32f
+  sha256: 765c5da5785dfa6f2849d45f476a62c8e8f751e79db04e123296e0325a497439
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,7 +36,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Create and plot hexagonal lattices'
+  summary: Create and plot hexagonal lattices
 
 extra:
   recipe-maintainers:
