@@ -1,5 +1,5 @@
 {% set name = "hexalattice" %}
-{% set version = "1.2.2" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fb5fd70efb6afe44c1e0919ee5f1912554999620bca56d2aa0b04a1b229b7e87
+  sha256: 58acdc6da8aa13553d7155ca36b54f7572aba0f6e63436ed0391e5a9e5f28ce4
 
 build:
   noarch: python
