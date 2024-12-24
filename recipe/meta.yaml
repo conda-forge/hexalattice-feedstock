@@ -6,28 +6,31 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 58acdc6da8aa13553d7155ca36b54f7572aba0f6e63436ed0391e5a9e5f28ce4
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
     - pip
     # the package lists numpy and matplotlib as setup requirements even though
     # they are not needed
     - numpy
     - matplotlib-base
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - hexalattice
 
