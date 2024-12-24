@@ -17,6 +17,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
+    - setuptools
     - pip
     # the package lists numpy and matplotlib as setup requirements even though
     # they are not needed
